@@ -1,24 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--You Bike Stations MapVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="YouBikeStationsMapVC" customModule="youbikeInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fpm-3W-Nqs">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2xt-kJ-Lnn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmz-iB-3aV">
+                                <rect key="frame" x="336" y="120" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="R"/>
+                                <connections>
+                                    <action selector="refreshBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lc6-eg-bQa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fpm-3W-Nqs" firstAttribute="top" secondItem="2xt-kJ-Lnn" secondAttribute="bottom" id="1fl-Ix-8PW"/>
+                            <constraint firstItem="Fpm-3W-Nqs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AIb-gz-C9H"/>
+                            <constraint firstItem="Fpm-3W-Nqs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CcV-M2-uTu"/>
+                            <constraint firstItem="2xt-kJ-Lnn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GPd-GB-Yy3"/>
+                            <constraint firstItem="2xt-kJ-Lnn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H2u-dl-hKR"/>
+                            <constraint firstItem="2xt-kJ-Lnn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b8I-Q6-RaU"/>
+                            <constraint firstItem="Fpm-3W-Nqs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gRL-IO-tQX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Fpm-3W-Nqs" id="mXw-13-ApQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="20.758928571428569"/>
+        </scene>
+        <!--You Bike Stations ListVC-->
+        <scene sceneID="LpH-b8-bcy">
+            <objects>
+                <viewController id="hq1-sq-eEb" customClass="YouBikeStationsListVC" customModule="youbikeInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LIA-5g-QXj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NZ1-oh-jiI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66J-E5-5u6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="21"/>
         </scene>
     </scenes>
 </document>
