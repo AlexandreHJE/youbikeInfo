@@ -19,8 +19,9 @@ class YouBikeStationsListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "https://tcgbusfs.blob.core.windows.net/blobyoubike/YouBikeTP.json")!
-        let task = URLSession.shared.dataTask(with: url) {
+//        let url = URL(string: "https://tcgbusfs.blob.core.windows.net/blobyoubike/YouBikeTP.json")!
+        let url = Bundle.main.url(forResource: "youbikeJSON", withExtension: "txt")
+        let task = URLSession.shared.dataTask(with: url!) {
             (jsonData, response, error)
             in
             let decoder = JSONDecoder()
@@ -55,7 +56,7 @@ extension YouBikeStationsListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //print(indexPath.row)
-        let station = youBikeDataArray[0]//[indexPath.row]
+        let station = youBikeDataArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ios11", for: indexPath) as! YouBikeStationsListCell
         
         cell.stationName?.text = station.sna
