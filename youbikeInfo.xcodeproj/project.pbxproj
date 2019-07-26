@@ -15,6 +15,9 @@
 		A28124B022E89A450096CA56 /* apiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124AF22E89A450096CA56 /* apiModel.swift */; };
 		A28124B222E89BF80096CA56 /* youbikeJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124B122E89BF80096CA56 /* youbikeJSON.txt */; };
 		A28124B522E9DF060096CA56 /* YouBikeStationsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124B422E9DF060096CA56 /* YouBikeStationsListVC.swift */; };
+		A28124B822EAB4A80096CA56 /* YouBikeStationsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28124B722EAB4A80096CA56 /* YouBikeStationsList.storyboard */; };
+		A28124BB22EAC78C0096CA56 /* YouBikeStationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124BA22EAC78C0096CA56 /* YouBikeStationsListCell.swift */; };
+		A28124BF22EAFC570096CA56 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124BE22EAFC570096CA56 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		A28124AF22E89A450096CA56 /* apiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = apiModel.swift; path = youbikeInfo/Models/apiModel.swift; sourceTree = SOURCE_ROOT; };
 		A28124B122E89BF80096CA56 /* youbikeJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = youbikeJSON.txt; sourceTree = "<group>"; };
 		A28124B422E9DF060096CA56 /* YouBikeStationsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsListVC.swift; sourceTree = "<group>"; };
+		A28124B722EAB4A80096CA56 /* YouBikeStationsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YouBikeStationsList.storyboard; sourceTree = "<group>"; };
+		A28124BA22EAC78C0096CA56 /* YouBikeStationsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsListCell.swift; sourceTree = "<group>"; };
+		A28124BE22EAFC570096CA56 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +66,12 @@
 		A281249B22E8998D0096CA56 /* youbikeInfo */ = {
 			isa = PBXGroup;
 			children = (
+				A28124BD22EAFC350096CA56 /* Managers */,
 				A28124B322E89F480096CA56 /* Models */,
 				A281249C22E8998D0096CA56 /* AppDelegate.swift */,
 				A281249E22E8998D0096CA56 /* YouBikeStationsMapVC.swift */,
-				A28124B422E9DF060096CA56 /* YouBikeStationsListVC.swift */,
+				A28124B922EAC3620096CA56 /* CustomUI */,
+				A28124B622EAB3BB0096CA56 /* StationList */,
 				A28124A022E8998D0096CA56 /* Main.storyboard */,
 				A28124A322E8998F0096CA56 /* Assets.xcassets */,
 				A28124A522E8998F0096CA56 /* LaunchScreen.storyboard */,
@@ -79,6 +87,31 @@
 				A28124AF22E89A450096CA56 /* apiModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A28124B622EAB3BB0096CA56 /* StationList */ = {
+			isa = PBXGroup;
+			children = (
+				A28124B422E9DF060096CA56 /* YouBikeStationsListVC.swift */,
+				A28124B722EAB4A80096CA56 /* YouBikeStationsList.storyboard */,
+			);
+			path = StationList;
+			sourceTree = "<group>";
+		};
+		A28124B922EAC3620096CA56 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				A28124BA22EAC78C0096CA56 /* YouBikeStationsListCell.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		A28124BD22EAFC350096CA56 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A28124BE22EAFC570096CA56 /* DataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +174,7 @@
 			files = (
 				A28124A722E8998F0096CA56 /* LaunchScreen.storyboard in Resources */,
 				A28124A422E8998F0096CA56 /* Assets.xcassets in Resources */,
+				A28124B822EAB4A80096CA56 /* YouBikeStationsList.storyboard in Resources */,
 				A28124A222E8998D0096CA56 /* Main.storyboard in Resources */,
 				A28124B222E89BF80096CA56 /* youbikeJSON.txt in Resources */,
 			);
@@ -153,6 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28124BB22EAC78C0096CA56 /* YouBikeStationsListCell.swift in Sources */,
+				A28124BF22EAFC570096CA56 /* DataManager.swift in Sources */,
 				A28124B022E89A450096CA56 /* apiModel.swift in Sources */,
 				A28124B522E9DF060096CA56 /* YouBikeStationsListVC.swift in Sources */,
 				A281249F22E8998D0096CA56 /* YouBikeStationsMapVC.swift in Sources */,

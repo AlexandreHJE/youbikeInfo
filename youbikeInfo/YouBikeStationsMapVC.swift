@@ -22,6 +22,9 @@ class YouBikeStationsMapVC: UIViewController {
     @IBAction func refreshBtn(_ sender: Any) {
         makePins()
     }
+    @IBAction func goToListBtn(_ sender: Any) {
+        
+    }
     
     
     override func viewDidLoad() {
