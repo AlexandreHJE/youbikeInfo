@@ -1,0 +1,29 @@
+// JMESPath(for splitting JSON data on online JSON Editor) 
+// Example: "retVal.*.{sno:sno, sna:sna, sarea:sarea, lat:lat, lng:lng, ar:ar}"
+
+// 得到各行政區中的 YouBike 站點 sno list:
+// Example: "(retVal.*.{sno:sno, sarea:sarea})[?sarea=='信義區'].sno"
+
+// YouBike API JSON key means
+// Data Example:
+{
+  "retCode": 1,			//Query 回傳成果: 1成功, 0失敗(?)
+  "retVal": {			//Query 回傳值: ["String": ["String": "String"]] (字典的字典)
+    "0001": {
+      "sno": "0001",			//站點ID
+      "sna": "捷運市政府站(3號出口)",	//站點中文名
+      "tot": "180",			//總車位數
+      "sbi": "147",			//停放腳踏車數
+      "sarea": "信義區",			//站點所在行政區
+      "mday": "20190723204618",		//資料更新時間 "YYYY-MM-DD hh-mm-ss"
+      "lat": "25.0408578889",		//緯度
+      "lng": "121.567904444",		//精度
+      "ar": "忠孝東路/松仁路(東南側)",	//站點位置敘述
+      "sareaen": "Xinyi Dist.",		
+      "snaen": "MRT Taipei City Hall Stataion(Exit 3)-2",
+      "aren": "The S.W. side of Road Zhongxiao East Road & Road Chung Yan.",
+      "bemp": "32",			//站點所具空位數
+      "act": "1"			//站點可用狀態: 1開放中, 0暫停使用(?)
+    }
+    }
+}

@@ -22,6 +22,10 @@
 		A28124C522EB04C00096CA56 /* favListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124C422EB04C00096CA56 /* favListModel.swift */; };
 		A28124C922EB05AA0096CA56 /* MyFavoriteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124C822EB05AA0096CA56 /* MyFavoriteListVC.swift */; };
 		A28124CB22EB076D0096CA56 /* MyFavoriteList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28124CA22EB076D0096CA56 /* MyFavoriteList.storyboard */; };
+		A28124CE22EC042E0096CA56 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124CD22EC042E0096CA56 /* ViewModel.swift */; };
+		A28124D022EC26580096CA56 /* DataCodeBook.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124CF22EC26570096CA56 /* DataCodeBook.txt */; };
+		A28124D322EC2DF70096CA56 /* snoListByDistrictJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124D122EC2DF70096CA56 /* snoListByDistrictJSON.txt */; };
+		A28124D422EC2DF70096CA56 /* TaipeiDistrictJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124D222EC2DF70096CA56 /* TaipeiDistrictJSON.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		A28124C422EB04C00096CA56 /* favListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favListModel.swift; sourceTree = "<group>"; };
 		A28124C822EB05AA0096CA56 /* MyFavoriteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteListVC.swift; sourceTree = "<group>"; };
 		A28124CA22EB076D0096CA56 /* MyFavoriteList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFavoriteList.storyboard; sourceTree = "<group>"; };
+		A28124CD22EC042E0096CA56 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A28124CF22EC26570096CA56 /* DataCodeBook.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataCodeBook.txt; sourceTree = "<group>"; };
+		A28124D122EC2DF70096CA56 /* snoListByDistrictJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snoListByDistrictJSON.txt; sourceTree = "<group>"; };
+		A28124D222EC2DF70096CA56 /* TaipeiDistrictJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaipeiDistrictJSON.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		A281249B22E8998D0096CA56 /* youbikeInfo */ = {
 			isa = PBXGroup;
 			children = (
+				A28124CC22EC040C0096CA56 /* ViewModels */,
 				A28124BD22EAFC350096CA56 /* Managers */,
 				A28124B322E89F480096CA56 /* Models */,
 				A281249C22E8998D0096CA56 /* AppDelegate.swift */,
@@ -84,6 +93,9 @@
 				A28124A022E8998D0096CA56 /* Main.storyboard */,
 				A28124A322E8998F0096CA56 /* Assets.xcassets */,
 				A28124A522E8998F0096CA56 /* LaunchScreen.storyboard */,
+				A28124CF22EC26570096CA56 /* DataCodeBook.txt */,
+				A28124D122EC2DF70096CA56 /* snoListByDistrictJSON.txt */,
+				A28124D222EC2DF70096CA56 /* TaipeiDistrictJSON.txt */,
 				A28124B122E89BF80096CA56 /* youbikeJSON.txt */,
 				A28124C222EB04920096CA56 /* favListJSON.txt */,
 				A28124A822E8998F0096CA56 /* Info.plist */,
@@ -132,6 +144,14 @@
 				A28124CA22EB076D0096CA56 /* MyFavoriteList.storyboard */,
 			);
 			path = MyFavoriteList;
+			sourceTree = "<group>";
+		};
+		A28124CC22EC040C0096CA56 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A28124CD22EC042E0096CA56 /* ViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,11 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A28124CB22EB076D0096CA56 /* MyFavoriteList.storyboard in Resources */,
+				A28124D322EC2DF70096CA56 /* snoListByDistrictJSON.txt in Resources */,
 				A28124C322EB04920096CA56 /* favListJSON.txt in Resources */,
 				A28124A722E8998F0096CA56 /* LaunchScreen.storyboard in Resources */,
+				A28124D422EC2DF70096CA56 /* TaipeiDistrictJSON.txt in Resources */,
 				A28124A422E8998F0096CA56 /* Assets.xcassets in Resources */,
 				A28124B822EAB4A80096CA56 /* YouBikeStationsList.storyboard in Resources */,
 				A28124A222E8998D0096CA56 /* Main.storyboard in Resources */,
+				A28124D022EC26580096CA56 /* DataCodeBook.txt in Resources */,
 				A28124B222E89BF80096CA56 /* youbikeJSON.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A28124BB22EAC78C0096CA56 /* YouBikeStationsListCell.swift in Sources */,
+				A28124CE22EC042E0096CA56 /* ViewModel.swift in Sources */,
 				A28124BF22EAFC570096CA56 /* DataManager.swift in Sources */,
 				A28124B022E89A450096CA56 /* apiModel.swift in Sources */,
 				A28124B522E9DF060096CA56 /* YouBikeStationsListVC.swift in Sources */,

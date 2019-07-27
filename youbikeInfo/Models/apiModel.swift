@@ -30,8 +30,6 @@ class YouBikeStation: NSObject, Codable {
     var aren: String?
     var bemp: String?
     var act: String?
-    
-    
 }
 
 //struct ApiReturn: Codable {
