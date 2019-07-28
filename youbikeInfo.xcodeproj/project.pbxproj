@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		526F24213D99F22B29E3D0AA /* Pods_youbikeInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A8FFA40F047E93963A82DC /* Pods_youbikeInfo.framework */; };
 		A281249D22E8998D0096CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281249C22E8998D0096CA56 /* AppDelegate.swift */; };
 		A281249F22E8998D0096CA56 /* YouBikeStationsMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281249E22E8998D0096CA56 /* YouBikeStationsMapVC.swift */; };
 		A28124A222E8998D0096CA56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28124A022E8998D0096CA56 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A27098069A88F1F01990BB26 /* Pods-youbikeInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youbikeInfo.debug.xcconfig"; path = "Target Support Files/Pods-youbikeInfo/Pods-youbikeInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		A281249922E8998D0096CA56 /* youbikeInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youbikeInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A281249C22E8998D0096CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A281249E22E8998D0096CA56 /* YouBikeStationsMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsMapVC.swift; sourceTree = "<group>"; };
@@ -50,6 +52,8 @@
 		A28124CF22EC26570096CA56 /* DataCodeBook.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataCodeBook.txt; sourceTree = "<group>"; };
 		A28124D122EC2DF70096CA56 /* snoListByDistrictJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snoListByDistrictJSON.txt; sourceTree = "<group>"; };
 		A28124D222EC2DF70096CA56 /* TaipeiDistrictJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaipeiDistrictJSON.txt; sourceTree = "<group>"; };
+		B3A8FFA40F047E93963A82DC /* Pods_youbikeInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youbikeInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D57EDAA559250FDF6042FC20 /* Pods-youbikeInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youbikeInfo.release.xcconfig"; path = "Target Support Files/Pods-youbikeInfo/Pods-youbikeInfo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +61,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526F24213D99F22B29E3D0AA /* Pods_youbikeInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B6738E53AC848DBF2C7E357 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3A8FFA40F047E93963A82DC /* Pods_youbikeInfo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A281249022E8998C0096CA56 = {
 			isa = PBXGroup;
 			children = (
 				A281249B22E8998D0096CA56 /* youbikeInfo */,
 				A281249A22E8998D0096CA56 /* Products */,
+				D2A67C0B13E7F0EE2AE7D22F /* Pods */,
+				3B6738E53AC848DBF2C7E357 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +169,16 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		D2A67C0B13E7F0EE2AE7D22F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A27098069A88F1F01990BB26 /* Pods-youbikeInfo.debug.xcconfig */,
+				D57EDAA559250FDF6042FC20 /* Pods-youbikeInfo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A28124AB22E8998F0096CA56 /* Build configuration list for PBXNativeTarget "youbikeInfo" */;
 			buildPhases = (
+				BAEA942946F29F810CC8C85E /* [CP] Check Pods Manifest.lock */,
 				A281249522E8998C0096CA56 /* Sources */,
 				A281249622E8998C0096CA56 /* Frameworks */,
 				A281249722E8998C0096CA56 /* Resources */,
+				E60D2A254F666F1BF716EAA3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +253,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BAEA942946F29F810CC8C85E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-youbikeInfo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E60D2A254F666F1BF716EAA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-youbikeInfo/Pods-youbikeInfo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-youbikeInfo/Pods-youbikeInfo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A281249522E8998C0096CA56 /* Sources */ = {
@@ -384,6 +462,7 @@
 		};
 		A28124AC22E8998F0096CA56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A27098069A88F1F01990BB26 /* Pods-youbikeInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -401,6 +480,7 @@
 		};
 		A28124AD22E8998F0096CA56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D57EDAA559250FDF6042FC20 /* Pods-youbikeInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

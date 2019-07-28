@@ -18,8 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4fB-jX-IAz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JUI-nU-hH2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ios11" rowHeight="100" id="tmy-nE-aFN" customClass="YouBikeStationsListCell" customModule="youbikeInfo" customModuleProvider="target">
@@ -69,14 +73,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9WH-Km-1KV" firstAttribute="bottom" secondItem="JUI-nU-hH2" secondAttribute="bottom" id="6CK-IH-nPb"/>
-                            <constraint firstItem="JUI-nU-hH2" firstAttribute="leading" secondItem="9WH-Km-1KV" secondAttribute="leading" id="Abl-A1-O2y"/>
-                            <constraint firstItem="JUI-nU-hH2" firstAttribute="top" secondItem="9WH-Km-1KV" secondAttribute="top" id="n0u-Pw-8YG"/>
-                            <constraint firstItem="9WH-Km-1KV" firstAttribute="trailing" secondItem="JUI-nU-hH2" secondAttribute="trailing" id="yGG-pn-sCt"/>
+                            <constraint firstItem="JUI-nU-hH2" firstAttribute="bottom" secondItem="9WH-Km-1KV" secondAttribute="bottom" id="HPC-TL-3EE"/>
+                            <constraint firstItem="JUI-nU-hH2" firstAttribute="top" secondItem="4fB-jX-IAz" secondAttribute="bottom" id="UR7-C6-Ddc"/>
+                            <constraint firstItem="4fB-jX-IAz" firstAttribute="leading" secondItem="9WH-Km-1KV" secondAttribute="leading" id="aIr-2G-9Pn"/>
+                            <constraint firstItem="JUI-nU-hH2" firstAttribute="leading" secondItem="9WH-Km-1KV" secondAttribute="leading" id="dZe-qz-4ET"/>
+                            <constraint firstItem="JUI-nU-hH2" firstAttribute="trailing" secondItem="9WH-Km-1KV" secondAttribute="trailing" id="mzf-7V-DhE"/>
+                            <constraint firstItem="4fB-jX-IAz" firstAttribute="top" secondItem="9WH-Km-1KV" secondAttribute="top" id="svN-wm-cbJ"/>
+                            <constraint firstItem="4fB-jX-IAz" firstAttribute="trailing" secondItem="9WH-Km-1KV" secondAttribute="trailing" id="yrQ-UR-ow2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9WH-Km-1KV"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="4fB-jX-IAz" id="ISk-ql-GNJ"/>
                         <outlet property="tableView" destination="JUI-nU-hH2" id="31m-4j-sqQ"/>
                     </connections>
                 </viewController>
