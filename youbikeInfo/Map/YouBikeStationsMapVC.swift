@@ -25,7 +25,7 @@ class YouBikeStationsMapVC: UIViewController {
     @IBAction func goToListBtn(_ sender: Any) {
         
     }
-    
+    private let viewModel = YouBikeStationsMapViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class YouBikeStationsMapVC: UIViewController {
             if let jData = jsonData, let apiReturn = try? decoder.decode(ApiReturn.self, from: jData)
             {
                 print("JSON parse success!")
-                self.youBikeData = apiReturn.retVal!
+                self.youBikeData = apiReturn.value!
             }else{
                 print("JSON parse failed...")
             }
@@ -73,6 +73,13 @@ class YouBikeStationsMapVC: UIViewController {
             annotations.append(annotation)
         }
         mapView.addAnnotations(annotations)
+    }
+}
+
+extension YouBikeStationsMapVC: YouBikeStationsMapViewModelDelegate {
+    func viewModel(_ viewModel: YouBikeStationsMapViewModelDelegate, didUpdateYouBikeData data: [YouBikeStation]) {
+        mapView.removeAnnotations(annotations)
+        makePins()
     }
 }
 

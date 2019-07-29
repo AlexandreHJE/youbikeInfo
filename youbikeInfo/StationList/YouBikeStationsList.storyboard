@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d1g-uY-TaY">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,62 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JUI-nU-hH2">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ios11" rowHeight="100" id="tmy-nE-aFN" customClass="YouBikeStationsListCell" customModule="youbikeInfo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tmy-nE-aFN" id="8Lo-bq-QsD" customClass="YouBikeStationsListCell" customModule="youbikeInfo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="juP-ZG-6Np">
-                                                    <rect key="frame" x="30" y="7.5" width="300" height="84"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guZ-lz-AvK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="300" id="1iA-d1-vYp"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="剩餘/總數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYG-DO-phm">
-                                                            <rect key="frame" x="0.0" y="36" width="300" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-bn-LSI">
-                                                            <rect key="frame" x="0.0" y="63.5" width="300" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="address" destination="nnV-bn-LSI" id="9yd-CS-clQ"/>
-                                            <outlet property="remainOverTotal" destination="SYG-DO-phm" id="648-GU-3KS"/>
-                                            <outlet property="stationName" destination="guZ-lz-AvK" id="IWA-lx-QUt"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JUI-nU-hH2" firstAttribute="bottom" secondItem="9WH-Km-1KV" secondAttribute="bottom" id="HPC-TL-3EE"/>
-                            <constraint firstItem="JUI-nU-hH2" firstAttribute="top" secondItem="4fB-jX-IAz" secondAttribute="bottom" id="UR7-C6-Ddc"/>
                             <constraint firstItem="4fB-jX-IAz" firstAttribute="leading" secondItem="9WH-Km-1KV" secondAttribute="leading" id="aIr-2G-9Pn"/>
-                            <constraint firstItem="JUI-nU-hH2" firstAttribute="leading" secondItem="9WH-Km-1KV" secondAttribute="leading" id="dZe-qz-4ET"/>
-                            <constraint firstItem="JUI-nU-hH2" firstAttribute="trailing" secondItem="9WH-Km-1KV" secondAttribute="trailing" id="mzf-7V-DhE"/>
                             <constraint firstItem="4fB-jX-IAz" firstAttribute="top" secondItem="9WH-Km-1KV" secondAttribute="top" id="svN-wm-cbJ"/>
                             <constraint firstItem="4fB-jX-IAz" firstAttribute="trailing" secondItem="9WH-Km-1KV" secondAttribute="trailing" id="yrQ-UR-ow2"/>
                         </constraints>
@@ -85,7 +33,6 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="4fB-jX-IAz" id="ISk-ql-GNJ"/>
-                        <outlet property="tableView" destination="JUI-nU-hH2" id="31m-4j-sqQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2n3-S1-drp" userLabel="First Responder" sceneMemberID="firstResponder"/>

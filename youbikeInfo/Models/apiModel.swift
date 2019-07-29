@@ -9,10 +9,39 @@
 import Foundation
 import MapKit
 
+struct Response: Decodable {
+    
+    var retCode: Int?
+    var values: [YouBikeStation]
+    
+    enum CodingKeys: String, CodingKey {
+        case retCode = "retCode"
+        case retVal = "retVal"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let value = try decoder.container(keyedBy: CodingKeys.self)
+        retCode = try value.decode(Int.self, forKey: .retCode)
+        let retValues = try value.decode([String: YouBikeStation].self, forKey: .retVal)
+        var temps = [YouBikeStation]()
+        for k in retValues.keys {
+            temps.append(retValues[k]!)
+        }
+        temps.sort { (lhs, rhs) -> Bool in
+            return lhs.sno! > rhs.sno!
+        }
+        values = temps
+    }
+}
 
 class ApiReturn: NSObject, Codable {
     var retCode: Int?
-    var retVal: [String : YouBikeStation]?
+    var value: [String : YouBikeStation]?
+
+    enum CodingKeys: String, CodingKey {
+        case retCode = "retCode"
+        case value = "retVal"
+    }
 }
 
 class YouBikeStation: NSObject, Codable {

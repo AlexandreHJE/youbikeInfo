@@ -40,7 +40,7 @@ class MyFavoriteListVC: UIViewController {
             let decoder = JSONDecoder()
             if let jData = jsonData, let apiReturn = try? decoder.decode(ApiReturn.self, from: jData)
             {
-                self.youBikeData = apiReturn.retVal!
+                self.youBikeData = apiReturn.value!
                 DispatchQueue.main.sync {
                     self.tableView.reloadData()
                 }

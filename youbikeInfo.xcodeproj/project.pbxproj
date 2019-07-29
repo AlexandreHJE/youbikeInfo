@@ -27,6 +27,9 @@
 		A28124D022EC26580096CA56 /* DataCodeBook.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124CF22EC26570096CA56 /* DataCodeBook.txt */; };
 		A28124D322EC2DF70096CA56 /* snoListByDistrictJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124D122EC2DF70096CA56 /* snoListByDistrictJSON.txt */; };
 		A28124D422EC2DF70096CA56 /* TaipeiDistrictJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124D222EC2DF70096CA56 /* TaipeiDistrictJSON.txt */; };
+		A28124D622EEC81F0096CA56 /* YouBikeStationsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A28124D522EEC81F0096CA56 /* YouBikeStationsListCell.xib */; };
+		A28124D822EECA140096CA56 /* YouBikeStationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124D722EECA140096CA56 /* YouBikeStationsListViewModel.swift */; };
+		A28124DB22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124DA22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		A28124CF22EC26570096CA56 /* DataCodeBook.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataCodeBook.txt; sourceTree = "<group>"; };
 		A28124D122EC2DF70096CA56 /* snoListByDistrictJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snoListByDistrictJSON.txt; sourceTree = "<group>"; };
 		A28124D222EC2DF70096CA56 /* TaipeiDistrictJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaipeiDistrictJSON.txt; sourceTree = "<group>"; };
+		A28124D522EEC81F0096CA56 /* YouBikeStationsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouBikeStationsListCell.xib; sourceTree = "<group>"; };
+		A28124D722EECA140096CA56 /* YouBikeStationsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsListViewModel.swift; sourceTree = "<group>"; };
+		A28124DA22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsMapViewModel.swift; sourceTree = "<group>"; };
 		B3A8FFA40F047E93963A82DC /* Pods_youbikeInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youbikeInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57EDAA559250FDF6042FC20 /* Pods-youbikeInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youbikeInfo.release.xcconfig"; path = "Target Support Files/Pods-youbikeInfo/Pods-youbikeInfo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,11 +103,11 @@
 		A281249B22E8998D0096CA56 /* youbikeInfo */ = {
 			isa = PBXGroup;
 			children = (
+				A28124D922EEDDA50096CA56 /* Map */,
 				A28124CC22EC040C0096CA56 /* ViewModels */,
 				A28124BD22EAFC350096CA56 /* Managers */,
 				A28124B322E89F480096CA56 /* Models */,
 				A281249C22E8998D0096CA56 /* AppDelegate.swift */,
-				A281249E22E8998D0096CA56 /* YouBikeStationsMapVC.swift */,
 				A28124B922EAC3620096CA56 /* CustomUI */,
 				A28124B622EAB3BB0096CA56 /* StationList */,
 				A28124C122EB03690096CA56 /* MyFavoriteList */,
@@ -131,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				A28124B422E9DF060096CA56 /* YouBikeStationsListVC.swift */,
+				A28124D722EECA140096CA56 /* YouBikeStationsListViewModel.swift */,
 				A28124B722EAB4A80096CA56 /* YouBikeStationsList.storyboard */,
 			);
 			path = StationList;
@@ -140,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				A28124BA22EAC78C0096CA56 /* YouBikeStationsListCell.swift */,
+				A28124D522EEC81F0096CA56 /* YouBikeStationsListCell.xib */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -169,13 +177,21 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		A28124D922EEDDA50096CA56 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A281249E22E8998D0096CA56 /* YouBikeStationsMapVC.swift */,
+				A28124DA22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		D2A67C0B13E7F0EE2AE7D22F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A27098069A88F1F01990BB26 /* Pods-youbikeInfo.debug.xcconfig */,
 				D57EDAA559250FDF6042FC20 /* Pods-youbikeInfo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -246,6 +262,7 @@
 				A28124D422EC2DF70096CA56 /* TaipeiDistrictJSON.txt in Resources */,
 				A28124A422E8998F0096CA56 /* Assets.xcassets in Resources */,
 				A28124B822EAB4A80096CA56 /* YouBikeStationsList.storyboard in Resources */,
+				A28124D622EEC81F0096CA56 /* YouBikeStationsListCell.xib in Resources */,
 				A28124A222E8998D0096CA56 /* Main.storyboard in Resources */,
 				A28124D022EC26580096CA56 /* DataCodeBook.txt in Resources */,
 				A28124B222E89BF80096CA56 /* youbikeJSON.txt in Resources */,
@@ -310,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28124DB22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift in Sources */,
 				A28124BB22EAC78C0096CA56 /* YouBikeStationsListCell.swift in Sources */,
 				A28124CE22EC042E0096CA56 /* ViewModel.swift in Sources */,
 				A28124BF22EAFC570096CA56 /* DataManager.swift in Sources */,
@@ -318,6 +336,7 @@
 				A28124C922EB05AA0096CA56 /* MyFavoriteListVC.swift in Sources */,
 				A281249F22E8998D0096CA56 /* YouBikeStationsMapVC.swift in Sources */,
 				A28124C522EB04C00096CA56 /* favListModel.swift in Sources */,
+				A28124D822EECA140096CA56 /* YouBikeStationsListViewModel.swift in Sources */,
 				A281249D22E8998D0096CA56 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
