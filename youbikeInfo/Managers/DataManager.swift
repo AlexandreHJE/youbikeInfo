@@ -50,6 +50,12 @@ extension DataManager {
         task.resume()
     }
     
+    //TODO: 如果API打失敗則拿本地端存放的舊資料來呈現
+    func getYouBikeStationsFromLocal(_ completion: @escaping ([String: YouBikeStation]) -> Void) {
+        let url = Bundle.main.url(forResource: "youbikeJSON", withExtension: "txt")
+    }
+    
+    
     func getStations(_ block: ([YouBikeStation]) -> Void) {
         // API
         block([YouBikeStation]())

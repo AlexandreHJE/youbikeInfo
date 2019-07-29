@@ -24,11 +24,11 @@ class YouBikeStationsListViewModel {
     weak var delegate: YouBikeStationsListViewModelDelegate?
     
     init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(prcessingDataToArray(_:)), name: NSNotification.Name(rawValue: "Get Data"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(processingDataToArray(_:)), name: NSNotification.Name(rawValue: "Get Data"), object: nil)
     }
     
     @objc
-    func prcessingDataToArray(_ notification: Notification) {
+    func processingDataToArray(_ notification: Notification) {
         if let userInfo = notification.userInfo {
             print(userInfo)
             print(userInfo["stations"])
