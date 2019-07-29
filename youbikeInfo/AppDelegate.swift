@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //initial get data
         getData()
+        loadData()
         Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(getData), userInfo: nil, repeats: true)
         return true
     }
@@ -44,10 +45,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     @objc
-    private func getData()  {
+    private func getData() {
         DataManager.shared.getYouBikeStations { (stations) in
             //save local
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Get Data"), object: self, userInfo: ["stations": stations])
+        }
+    }
+    
+    @objc
+    private func loadData() {
+        DataManager.shared.getMyFavorite { (myFavListData) in
+            //save local
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Get Favorite"), object: self, userInfo: ["favorites" : myFavListData])
         }
     }
 

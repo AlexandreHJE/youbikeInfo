@@ -24,9 +24,11 @@ extension DataManager {
             if let jData = jsonData, let apiReturn = try? decoder.decode(ApiReturn.self, from: jData)
             {
                 print("JSON parse success!")
+                self.saveYouBikeStations(apiReturn)
                 DispatchQueue.main.sync {
                     //                    self.youBikeData = apiReturn.retVal!
                     completion(apiReturn.value!)
+                    
                     var sections = [String: [YouBikeStation]]()
                     
                     let stations = apiReturn.value!
@@ -70,4 +72,46 @@ extension DataManager {
     }
 }
 
+//存不起來
+extension DataManager {
+    func saveYouBikeStations(_ apiReturn: ApiReturn) {
+        if apiReturn.retCode == 1 {
+            let encoder: JSONEncoder = JSONEncoder()
+            let encoded = try? encoder.encode(apiReturn)
+            let savingData = String(data: encoded!, encoding: .utf8)
+            print(savingData)
+            let fileManager = FileManager.default //生成檔案管理員
+            let destinationFile = NSHomeDirectory() + "/Documents/testJson.txt"
+            if fileManager.fileExists(atPath: destinationFile)
+            { //確認檔案是否存在
+                do{
+                    try savingData!.write(toFile: destinationFile, atomically: true, encoding: .utf8)
+                    print("saved to txt.")
+                }catch{
+                    print("Unsaved...")
+                }
+            }
+        }else{
+            print("API狀態異常，不會存入資料")
+        }
+    }
+}
 
+extension DataManager {
+    func getMyFavorite(_ completion: @escaping ([String]) -> Void) {
+        let url = Bundle.main.url(forResource: "favListJSON", withExtension: "txt")
+        let task = URLSession.shared.dataTask(with: url!) {
+            (jsonData, response, error)
+            in
+            let decoder = JSONDecoder()
+            if let jData = jsonData, let favoriteList = try? decoder.decode(FavoriteList.self, from: jData)
+            {
+                    let myFavListData = favoriteList.myFav!
+                
+            }else{
+                print("JSON parse failed...")
+            }
+        }
+        task.resume()
+    }
+}

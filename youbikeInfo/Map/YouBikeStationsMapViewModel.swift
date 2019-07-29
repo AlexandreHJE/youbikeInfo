@@ -29,8 +29,8 @@ class YouBikeStationsMapViewModel {
     @objc
     func processingDataToArray(_ notification: Notification) {
         if let userInfo = notification.userInfo {
-            print(userInfo)
-            print(userInfo["stations"])
+            //print(userInfo)
+            //print(userInfo["stations"])
             if let stations = userInfo["stations"] as? [String: YouBikeStation] {
                 var temps = [YouBikeStation]()
                 for k in stations.keys {
