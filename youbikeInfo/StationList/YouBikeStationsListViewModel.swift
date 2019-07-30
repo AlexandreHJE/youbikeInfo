@@ -13,6 +13,7 @@ protocol YouBikeStationsListViewModelDelegate: NSObjectProtocol {
     func viewModel(_ viewModel: YouBikeStationsListViewModel, didUpdateYouBikeData data: [YouBikeStation])
 }
 
+
 class YouBikeStationsListViewModel {
     
     var stations = [YouBikeStation]() {
