@@ -79,7 +79,7 @@ extension DataManager {
             let encoder: JSONEncoder = JSONEncoder()
             let encoded = try? encoder.encode(apiReturn)
             let savingData = String(data: encoded!, encoding: .utf8)
-            print(savingData)
+            //print(savingData)
             let fileManager = FileManager.default //生成檔案管理員
             let destinationFile = NSHomeDirectory() + "/Documents/testJson.txt"
             if fileManager.fileExists(atPath: destinationFile)

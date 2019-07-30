@@ -10,7 +10,7 @@
 		526F24213D99F22B29E3D0AA /* Pods_youbikeInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A8FFA40F047E93963A82DC /* Pods_youbikeInfo.framework */; };
 		A281249D22E8998D0096CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281249C22E8998D0096CA56 /* AppDelegate.swift */; };
 		A281249F22E8998D0096CA56 /* YouBikeStationsMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281249E22E8998D0096CA56 /* YouBikeStationsMapVC.swift */; };
-		A28124A222E8998D0096CA56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28124A022E8998D0096CA56 /* Main.storyboard */; };
+		A28124A222E8998D0096CA56 /* YouBikeStationsMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28124A022E8998D0096CA56 /* YouBikeStationsMap.storyboard */; };
 		A28124A422E8998F0096CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28124A322E8998F0096CA56 /* Assets.xcassets */; };
 		A28124A722E8998F0096CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28124A522E8998F0096CA56 /* LaunchScreen.storyboard */; };
 		A28124B022E89A450096CA56 /* apiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124AF22E89A450096CA56 /* apiModel.swift */; };
@@ -39,7 +39,7 @@
 		A281249922E8998D0096CA56 /* youbikeInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youbikeInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A281249C22E8998D0096CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A281249E22E8998D0096CA56 /* YouBikeStationsMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsMapVC.swift; sourceTree = "<group>"; };
-		A28124A122E8998D0096CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A28124A122E8998D0096CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/YouBikeStationsMap.storyboard; sourceTree = "<group>"; };
 		A28124A322E8998F0096CA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A28124A622E8998F0096CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A28124A822E8998F0096CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,11 +110,10 @@
 				A28124D922EEDDA50096CA56 /* Map */,
 				A28124BD22EAFC350096CA56 /* Managers */,
 				A28124B322E89F480096CA56 /* Models */,
-				A281249C22E8998D0096CA56 /* AppDelegate.swift */,
 				A28124B922EAC3620096CA56 /* CustomUI */,
 				A28124B622EAB3BB0096CA56 /* StationList */,
 				A28124C122EB03690096CA56 /* MyFavoriteList */,
-				A28124A022E8998D0096CA56 /* Main.storyboard */,
+				A281249C22E8998D0096CA56 /* AppDelegate.swift */,
 				A28124A322E8998F0096CA56 /* Assets.xcassets */,
 				A28124A522E8998F0096CA56 /* LaunchScreen.storyboard */,
 				A28124CF22EC26570096CA56 /* DataCodeBook.txt */,
@@ -180,6 +179,7 @@
 			children = (
 				A281249E22E8998D0096CA56 /* YouBikeStationsMapVC.swift */,
 				A28124DA22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift */,
+				A28124A022E8998D0096CA56 /* YouBikeStationsMap.storyboard */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 				A28124B822EAB4A80096CA56 /* YouBikeStationsList.storyboard in Resources */,
 				A28124D622EEC81F0096CA56 /* YouBikeStationsListCell.xib in Resources */,
 				A28124DD22EEF8330096CA56 /* testJson.txt in Resources */,
-				A28124A222E8998D0096CA56 /* Main.storyboard in Resources */,
+				A28124A222E8998D0096CA56 /* YouBikeStationsMap.storyboard in Resources */,
 				A28124D022EC26580096CA56 /* DataCodeBook.txt in Resources */,
 				A28124B222E89BF80096CA56 /* youbikeJSON.txt in Resources */,
 			);
@@ -344,12 +344,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A28124A022E8998D0096CA56 /* Main.storyboard */ = {
+		A28124A022E8998D0096CA56 /* YouBikeStationsMap.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A28124A122E8998D0096CA56 /* Base */,
 			);
-			name = Main.storyboard;
+			name = YouBikeStationsMap.storyboard;
 			sourceTree = "<group>";
 		};
 		A28124A522E8998F0096CA56 /* LaunchScreen.storyboard */ = {

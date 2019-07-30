@@ -16,6 +16,8 @@ class YouBikeStationsMapVC: UIViewController {
     var filteredData = [String: YouBikeStation]()
     private let viewModel = YouBikeStationsMapViewModel()
     
+    let districtList = ["中正區","大同區","中山區","松山區","大安區","萬華區","信義區","士林區","北投區","內湖區","南港區","文山區"]
+    
     let regionRad: CLLocationDistance = 1000
     
     @IBOutlet weak var mapView: MKMapView!
@@ -25,6 +27,8 @@ class YouBikeStationsMapVC: UIViewController {
     @IBAction func goToListBtn(_ sender: Any) {
         
     }
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func viewDidLoad() {
@@ -57,6 +61,8 @@ class YouBikeStationsMapVC: UIViewController {
             annotations.append(annotation)
         }
         
+        
+        
 //        for i in youBikeData.keys {
 //            print(i)
 //            let annotation = MKPointAnnotation()
@@ -69,6 +75,8 @@ class YouBikeStationsMapVC: UIViewController {
 //        }
         mapView.addAnnotations(annotations)
     }
+    
+    
 }
 
 extension YouBikeStationsMapVC: YouBikeStationsMapViewModelDelegate {
@@ -76,6 +84,31 @@ extension YouBikeStationsMapVC: YouBikeStationsMapViewModelDelegate {
         mapView.removeAnnotations(annotations)
         print("delegate tirggered")
         makePins()
+    }
+}
+
+extension YouBikeStationsMapVC: UIPickerViewDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return districtList[row]
+    }
+}
+
+extension YouBikeStationsMapVC: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return districtList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        searchBar.text = districtList[row]
     }
 }
 
