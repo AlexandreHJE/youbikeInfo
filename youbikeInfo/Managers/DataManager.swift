@@ -62,14 +62,6 @@ extension DataManager {
         // API
         block([YouBikeStation]())
     }
-    
-    func getNumbers(_ block: ([Int]) -> Void) {
-        let numbers = (0..<5).map { (_) -> Int in
-            return Int(arc4random_uniform(6))
-        }
-        
-        block(numbers)
-    }
 }
 
 //存不起來
