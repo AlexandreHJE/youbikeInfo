@@ -39,6 +39,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCP-Ut-y6u">
                         <rect key="frame" x="584" y="210" width="46" height="30"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="buttonTouchUpInside:" destination="fiO-iT-haV" eventType="touchUpInside" id="BT8-Lb-J6H"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -57,9 +60,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="address" destination="oGt-rV-e6a" id="7b9-ge-reb"/>
-                <outlet property="remainOverTotal" destination="fLg-er-rJT" id="VEM-2p-rNS"/>
-                <outlet property="stationName" destination="Uzx-v8-kTe" id="Ibe-h6-iJz"/>
+                <outlet property="detail2Label" destination="oGt-rV-e6a" id="7b9-ge-reb"/>
+                <outlet property="detailLabel" destination="fLg-er-rJT" id="VEM-2p-rNS"/>
+                <outlet property="favoriteButton" destination="kCP-Ut-y6u" id="IDe-Qo-Eqw"/>
+                <outlet property="titleLabel" destination="Uzx-v8-kTe" id="Ibe-h6-iJz"/>
             </connections>
             <point key="canvasLocation" x="-650" y="-170"/>
         </tableViewCell>

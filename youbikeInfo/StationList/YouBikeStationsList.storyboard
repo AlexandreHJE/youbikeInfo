@@ -31,6 +31,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9WH-Km-1KV"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="OUI-8b-pUV"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="4fB-jX-IAz" id="ISk-ql-GNJ"/>
                     </connections>

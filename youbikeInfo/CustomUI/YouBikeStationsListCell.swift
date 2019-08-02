@@ -8,12 +8,21 @@
 
 import UIKit
 
+protocol YouBikeStationsListCellDelegate {
+    
+    func cell(_ cell: YouBikeStationsListCell, buttonTouchUpInside button: UIButton, stationID: String?)
+}
+
 class YouBikeStationsListCell: UITableViewCell {
 
     
-    @IBOutlet weak var stationName: UILabel!
-    @IBOutlet weak var remainOverTotal: UILabel!
-    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var detail2Label: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    private var stationID: String?
+    var delegate: YouBikeStationsListCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +34,15 @@ class YouBikeStationsListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func buttonTouchUpInside(_ sender: UIButton) {
+        delegate?.cell(self, buttonTouchUpInside: sender, stationID: stationID)
+    }
 
+    func setUI(with station: YouBikeStation) {
+        stationID = station.sno
+        titleLabel.text = station.sna
+        detailLabel.text = "可使用\(station.sbi!)台・總車位\(station.tot!)"
+        detail2Label.text = station.ar
+    }
 }

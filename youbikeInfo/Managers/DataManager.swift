@@ -80,7 +80,7 @@ extension DataManager {
                     try savingData!.write(toFile: destinationFile, atomically: true, encoding: .utf8)
                     print("saved to txt.")
                 }catch{
-                    print("Unsaved...")
+                    print("銅牌coder，資料存不進去QAQ")
                 }
             }
         }else{
