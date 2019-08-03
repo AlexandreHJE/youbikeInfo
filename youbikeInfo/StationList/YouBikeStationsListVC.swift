@@ -99,6 +99,7 @@ extension YouBikeStationsListVC: YouBikeStationsListCellDelegate {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FavoritesUpdates"), object: self, userInfo: nil)
         }
 //        print("ListDelegateCalled with idxRow: \(indexPathRow)")
+        //print("Pressed")
     }
 }
 
