@@ -37,6 +37,7 @@ class YouBikeStationsListCell: UITableViewCell {
     
     @IBAction func buttonTouchUpInside(_ sender: UIButton) {
         delegate?.cell(self, buttonTouchUpInside: sender, stationID: stationID)
+        print("BTN pressed: \(self.stationID! as String)")
     }
 
     func setUI(with station: YouBikeStation) {

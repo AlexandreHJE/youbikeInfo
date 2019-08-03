@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //initial get data
+        UserDefaults.standard.set([String](), forKey: "favoriteIDs")
         getData()
         loadData()
         Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(getData), userInfo: nil, repeats: true)

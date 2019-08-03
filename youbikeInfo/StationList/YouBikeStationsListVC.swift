@@ -44,13 +44,12 @@ extension YouBikeStationsListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //print(indexPath.row)
         let station = viewModel.stations[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "YouBikeStationsListCell", for: indexPath) as! YouBikeStationsListCell
-        
-        cell.titleLabel?.text = station.sna
-        cell.detailLabel?.text = "可使用\(station.sbi!)台・總車位\(station.tot!)"
-        cell.detail2Label?.text = station.ar
+        cell.delegate = self
+        cell.favoriteButton.tag = indexPath.row + 1000
+        cell.setUI(with: station)
+
         return cell
     }
     
@@ -77,6 +76,29 @@ extension YouBikeStationsListVC: UIPickerViewDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
+    }
+}
+
+extension YouBikeStationsListVC: YouBikeStationsListCellDelegate {
+    func cell(_ cell: YouBikeStationsListCell, buttonTouchUpInside button: UIButton, stationID: String?) {
+        let indexPathRow = button.tag - 1000
+        let station = viewModel.stations[indexPathRow]
+        
+        if var array = UserDefaults.standard.array(forKey: "favoriteIDs") as? [String] {
+            var favSet = Set(array)
+            if Set([stationID!]).isSubset(of: favSet){
+                favSet.remove(stationID!)
+                array = Array(favSet)
+            } else {
+                array.append(station.sno!)
+            }
+            UserDefaults.standard.set(array, forKey: "favoriteIDs")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FavoritesUpdates"), object: self, userInfo: nil)
+        } else {
+            UserDefaults.standard.set([station.sno!], forKey: "favoriteIDs")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FavoritesUpdates"), object: self, userInfo: nil)
+        }
+//        print("ListDelegateCalled with idxRow: \(indexPathRow)")
     }
 }
 
