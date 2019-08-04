@@ -50,10 +50,9 @@ extension FavoritesViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "YouBikeStationsListCell", for: indexPath) as! YouBikeStationsListCell
         cell.delegate = self
+        cell.favoriteButton.setTitle("RE", for: .normal)
         cell.setUI(with: station)
         cell.favoriteButton.tag = indexPath.row + 1000
-        //ToFix: 按鈕標題顯示有問題
-        cell.favoriteButton.titleLabel?.text = "RE"
         return cell
     }
 }

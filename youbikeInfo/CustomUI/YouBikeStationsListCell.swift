@@ -36,6 +36,7 @@ class YouBikeStationsListCell: UITableViewCell {
     }
     
     @IBAction func buttonTouchUpInside(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         delegate?.cell(self, buttonTouchUpInside: sender, stationID: stationID)
         print("BTN pressed: \(self.stationID! as String)")
     }

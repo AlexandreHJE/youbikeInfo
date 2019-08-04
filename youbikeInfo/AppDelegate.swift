@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //initial get data
+        //Formatting to empty UserDefaults' favoriteIDs(Cancel it for final version)
         UserDefaults.standard.set([String](), forKey: "favoriteIDs")
         getData()
         loadData()

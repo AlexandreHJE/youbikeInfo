@@ -75,8 +75,7 @@ class YouBikeStationsMapVC: UIViewController {
 //        }
         mapView.addAnnotations(annotations)
     }
-    
-    
+
 }
 
 extension YouBikeStationsMapVC: YouBikeStationsMapViewModelDelegate {
