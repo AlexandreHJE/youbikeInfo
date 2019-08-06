@@ -15,6 +15,7 @@ class FavoritesViewController: UIViewController {
         let tableView = UITableView(frame: .zero)
         tableView.delegate = self
         tableView.dataSource = self
+        let cellIdentifier = String(describing: YouBikeStationsListCell.self)
         tableView.register(UINib(nibName: "YouBikeStationsListCell", bundle: nil), forCellReuseIdentifier: "YouBikeStationsListCell")
         return tableView
     }()
@@ -31,10 +32,12 @@ class FavoritesViewController: UIViewController {
         self.tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         
-//        self.tableView.delegate = self
-//        self.tableView.dataSource = self
+        //        self.tableView.delegate = self
+        //        self.tableView.dataSource = self
         self.viewModel.delegate = self
+        
     }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -50,9 +53,10 @@ extension FavoritesViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "YouBikeStationsListCell", for: indexPath) as! YouBikeStationsListCell
         cell.delegate = self
-        cell.favoriteButton.setTitle("RE", for: .normal)
+        cell.favoriteButton.setTitle("Remove", for: .normal)
         cell.setUI(with: station)
         cell.favoriteButton.tag = indexPath.row + 1000
+        cell.favoriteButton.isSelected = false
         return cell
     }
 }
@@ -71,6 +75,10 @@ extension FavoritesViewController: UITableViewDelegate {
 
 extension FavoritesViewController: MyFavoriteListViewModelDelegate {
     
+    func viewModel(_ viewModel: FavoritesViewModel, didUpdateYouBikeData data: [YouBikeStation]) {
+        tableView.reloadData()
+    }
+    
     func viewModel(_ viewModel: FavoritesViewModel, didUpdateFavorites: [YouBikeStation]) {
         tableView.reloadData()
     }
@@ -82,7 +90,7 @@ extension FavoritesViewController: YouBikeStationsListCellDelegate {
         let indexPathRow = button.tag - 1000
         let station = viewModel.favorites[indexPathRow]
 
-        if var array = UserDefaults.standard.array(forKey: "favoriteIDs") as? [String] {
+        if let array = UserDefaults.standard.array(forKey: "favoriteIDs") as? [String] {
             var favSet = Set(array)
             favSet.remove(station.sno!)
             UserDefaults.standard.set(Array(favSet), forKey: "favoriteIDs")
@@ -91,7 +99,5 @@ extension FavoritesViewController: YouBikeStationsListCellDelegate {
             UserDefaults.standard.set([station.sno!], forKey: "favoriteIDs")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FavoritesUpdates"), object: self, userInfo: nil)
         }
-
-        print("hello \(indexPathRow)")
     }
 }

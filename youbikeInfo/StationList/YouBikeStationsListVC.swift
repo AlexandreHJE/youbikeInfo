@@ -20,7 +20,7 @@ class YouBikeStationsListVC: UIViewController {
     }()
     
     @IBOutlet weak var searchBar: UISearchBar!
-    private let viewModel = YouBikeStationsListViewModel()
+    private let viewModel = FavoritesViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +49,9 @@ extension YouBikeStationsListVC: UITableViewDataSource {
         cell.delegate = self
         cell.favoriteButton.tag = indexPath.row + 1000
         cell.setUI(with: station)
-
+        cell.favoriteButton.setTitle("Add to favorite", for: .normal)
+        cell.favoriteButton.setTitle("Remove from favorite", for: .selected)
+        cell.favoriteButton.isSelected = viewModel.favoriteIDs.contains(station.sno!)
         return cell
     }
     
@@ -65,9 +67,13 @@ extension YouBikeStationsListVC: UITableViewDelegate {
 }
 
 
-extension YouBikeStationsListVC: YouBikeStationsListViewModelDelegate {
+extension YouBikeStationsListVC: MyFavoriteListViewModelDelegate {
+    func viewModel(_ viewModel: FavoritesViewModel, didUpdateFavorites: [YouBikeStation]) {
+        tableView.reloadData()
+    }
     
-    func viewModel(_ viewModel: YouBikeStationsListViewModel, didUpdateYouBikeData data: [YouBikeStation]) {
+    
+    func viewModel(_ viewModel: FavoritesViewModel, didUpdateYouBikeData data: [YouBikeStation]) {
         tableView.reloadData()
     }
 }

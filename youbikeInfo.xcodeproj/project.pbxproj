@@ -26,7 +26,6 @@
 		A28124D322EC2DF70096CA56 /* snoListByDistrictJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124D122EC2DF70096CA56 /* snoListByDistrictJSON.txt */; };
 		A28124D422EC2DF70096CA56 /* TaipeiDistrictJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124D222EC2DF70096CA56 /* TaipeiDistrictJSON.txt */; };
 		A28124D622EEC81F0096CA56 /* YouBikeStationsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A28124D522EEC81F0096CA56 /* YouBikeStationsListCell.xib */; };
-		A28124D822EECA140096CA56 /* YouBikeStationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124D722EECA140096CA56 /* YouBikeStationsListViewModel.swift */; };
 		A28124DB22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124DA22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift */; };
 		A28124DD22EEF8330096CA56 /* testJson.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28124DC22EEF8330096CA56 /* testJson.txt */; };
 		A28124DF22F0651D0096CA56 /* StationInfoOnMapSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A28124DE22F0651D0096CA56 /* StationInfoOnMapSubView.xib */; };
@@ -59,7 +58,6 @@
 		A28124D122EC2DF70096CA56 /* snoListByDistrictJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snoListByDistrictJSON.txt; sourceTree = "<group>"; };
 		A28124D222EC2DF70096CA56 /* TaipeiDistrictJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaipeiDistrictJSON.txt; sourceTree = "<group>"; };
 		A28124D522EEC81F0096CA56 /* YouBikeStationsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouBikeStationsListCell.xib; sourceTree = "<group>"; };
-		A28124D722EECA140096CA56 /* YouBikeStationsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsListViewModel.swift; sourceTree = "<group>"; };
 		A28124DA22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsMapViewModel.swift; sourceTree = "<group>"; };
 		A28124DC22EEF8330096CA56 /* testJson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testJson.txt; sourceTree = "<group>"; };
 		A28124DE22F0651D0096CA56 /* StationInfoOnMapSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationInfoOnMapSubView.xib; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				A28124B422E9DF060096CA56 /* YouBikeStationsListVC.swift */,
-				A28124D722EECA140096CA56 /* YouBikeStationsListViewModel.swift */,
 				A28124B722EAB4A80096CA56 /* YouBikeStationsList.storyboard */,
 			);
 			path = StationList;
@@ -354,7 +351,6 @@
 				A28124E322F464FB0096CA56 /* FavoritesViewModel.swift in Sources */,
 				A281249F22E8998D0096CA56 /* YouBikeStationsMapVC.swift in Sources */,
 				A28124C522EB04C00096CA56 /* favListModel.swift in Sources */,
-				A28124D822EECA140096CA56 /* YouBikeStationsListViewModel.swift in Sources */,
 				A28124EA22F47A970096CA56 /* TabBarViewController.swift in Sources */,
 				A28124E522F46B050096CA56 /* FavoritesViewController.swift in Sources */,
 				A281249D22E8998D0096CA56 /* AppDelegate.swift in Sources */,

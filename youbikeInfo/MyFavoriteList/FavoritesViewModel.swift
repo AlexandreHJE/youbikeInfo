@@ -10,6 +10,9 @@ import Foundation
 
 protocol MyFavoriteListViewModelDelegate {
     func viewModel(_ viewModel: FavoritesViewModel, didUpdateFavorites: [YouBikeStation])
+    
+    func viewModel(_ viewModel: FavoritesViewModel, didUpdateYouBikeData data: [YouBikeStation])
+    
 }
 
 class FavoritesViewModel {
@@ -19,9 +22,15 @@ class FavoritesViewModel {
         }
     }
     
-    private var stations = [String: YouBikeStation]() {
+    private(set) var stations = [YouBikeStation]() {
         didSet {
-            favorites = stations
+            delegate?.viewModel(self, didUpdateYouBikeData: stations)
+        }
+    }
+    
+    private var stationTable = [String: YouBikeStation]() {
+        didSet {
+            favorites = stationTable
                 .filter { (dictionary) -> Bool in
                     return favoriteIDs.contains(dictionary.key)
                 }
@@ -31,9 +40,9 @@ class FavoritesViewModel {
         }
     }
     
-    private var favoriteIDs = Set<String>() {
+    private(set) var favoriteIDs = Set<String>() {
         didSet {
-            favorites = stations
+            favorites = stationTable
                 .filter { (dictionary) -> Bool in
                     return favoriteIDs.contains(dictionary.key)
                 }
@@ -57,16 +66,33 @@ class FavoritesViewModel {
     @objc
     func processingDataToArray(_ notification: Notification) {
         if let userInfo = notification.userInfo {
-            if let stations = userInfo["stations"] as? [String: YouBikeStation] {
-                self.stations = stations
+            if let stationTable = userInfo["stations"] as? [String: YouBikeStation] {
+                self.stationTable = stationTable
+                
+                var temps = [YouBikeStation]()
+                for k in stationTable.keys {
+                    temps.append(stationTable[k]!)
+                }
+                temps.sort { (lhs, rhs) -> Bool in
+                    return lhs.sno! > rhs.sno!
+                }
+                
+                self.stations = temps
             }
         }
     }
     
     @objc
     func favoritesUpdates(_ notification: Notification) {
-        if let array = UserDefaults.standard.array(forKey: "favoriteIDs") as? [String] {
+        if let array = UserDefaults.standard.array(forKey: UserDefaults.Keys.favoriteIDs) as? [String] {
             favoriteIDs = Set(array)
         }
+    }
+}
+
+extension UserDefaults {
+    
+    enum Keys {
+        static let favoriteIDs = "favoriteIDs"
     }
 }

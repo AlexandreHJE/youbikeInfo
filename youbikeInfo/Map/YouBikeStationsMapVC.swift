@@ -16,7 +16,20 @@ class YouBikeStationsMapVC: UIViewController {
     var filteredData = [String: YouBikeStation]()
     private let viewModel = YouBikeStationsMapViewModel()
     
-    let districtList = ["中正區","大同區","中山區","松山區","大安區","萬華區","信義區","士林區","北投區","內湖區","南港區","文山區"]
+    let districtList = [
+        "中正區",
+        "大同區",
+        "中山區",
+        "松山區",
+        "大安區",
+        "萬華區",
+        "信義區",
+        "士林區",
+        "北投區",
+        "內湖區",
+        "南港區",
+        "文山區"
+    ]
     
     let regionRad: CLLocationDistance = 1000
     
@@ -60,19 +73,8 @@ class YouBikeStationsMapVC: UIViewController {
             annotation.subtitle = viewModel.stations[i].ar
             annotations.append(annotation)
         }
-        
-        
-        
-//        for i in youBikeData.keys {
-//            print(i)
-//            let annotation = MKPointAnnotation()
-//            //直接轉型而沒有用NSString.doubleValue 會因為 " 123.4567 " 包含空白得到nil而崩潰
-//            //annotation.coordinate = CLLocationCoordinate2D(latitude: Double((youBikeData[i]?.lat!)!)! as CLLocationDegrees, longitude: Double((youBikeData[i]?.lng!)!)! as CLLocationDegrees)
-//            annotation.coordinate = CLLocationCoordinate2D(latitude: ((youBikeData[i]?.lat!)! as NSString).doubleValue, longitude: ((youBikeData[i]?.lng!)! as NSString).doubleValue)
-//            annotation.title = youBikeData[i]?.sna
-//            annotation.subtitle = youBikeData[i]?.ar
-//            annotations.append(annotation)
-//        }
+        //寫不出來map...
+        //annotations = (viewModel.stations).map({$0.})
         mapView.addAnnotations(annotations)
     }
 
