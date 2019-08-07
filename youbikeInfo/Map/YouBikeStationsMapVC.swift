@@ -12,6 +12,7 @@ import MapKit
 class YouBikeStationsMapVC: UIViewController {
 
     var annotations = [MKPointAnnotation]()
+    var selectedAnnotation: MKAnnotation?
     var youBikeData = [String: YouBikeStation]()
     var filteredData = [String: YouBikeStation]()
     private let viewModel = YouBikeStationsMapViewModel()
@@ -64,8 +65,9 @@ class YouBikeStationsMapVC: UIViewController {
                                                   latitudinalMeters: regionRad, longitudinalMeters: regionRad)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    
+
     func makePins(){
+        annotations = []
         for i in 0..<viewModel.stations.count {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: ((viewModel.stations[i].lat)! as NSString).doubleValue, longitude: ((viewModel.stations[i].lng)! as NSString).doubleValue)
@@ -77,7 +79,10 @@ class YouBikeStationsMapVC: UIViewController {
         //annotations = (viewModel.stations).map({$0.})
         mapView.addAnnotations(annotations)
     }
-
+    
+    func showStationDetailSubview(_ mapView: MKMapView, viewFor annotation: MKAnnotation) {
+        
+    }
 }
 
 extension YouBikeStationsMapVC: YouBikeStationsMapViewModelDelegate {
@@ -112,4 +117,5 @@ extension YouBikeStationsMapVC: UIPickerViewDataSource {
         searchBar.text = districtList[row]
     }
 }
+
 
