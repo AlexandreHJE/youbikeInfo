@@ -9,19 +9,10 @@
 import Foundation
 import MapKit.MKPointAnnotation
 
-struct YouBikeStationManager {
+struct YouBikeStationsManager {
+    
     
     static func stationsToPointAnnotations(_ stations: [YouBikeStation]) -> [MKPointAnnotation] {
-        //舊版寫法 改用map改寫 push後刪除
-        //        var annotations = [MKPointAnnotation]()
-        //        for i in 0..<stations.count {
-        //            let annotation = MKPointAnnotation()
-        //            annotation.coordinate = CLLocationCoordinate2D(latitude: ((stations[i].lat)! as NSString).doubleValue, longitude: ((stations[i].lng)! as NSString).doubleValue)
-        //            annotation.title = stations[i].sna
-        //            annotation.subtitle = stations[i].ar
-        //            annotations.append(annotation)
-        //        }
-        //        return annotations
         
         return stations
             .map({ (station) -> MKPointAnnotation in

@@ -34,7 +34,7 @@
 		A28124E522F46B050096CA56 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124E422F46B050096CA56 /* FavoritesViewController.swift */; };
 		A28124E822F479E00096CA56 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28124E722F479E00096CA56 /* TabBar.storyboard */; };
 		A28124EA22F47A970096CA56 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124E922F47A970096CA56 /* TabBarViewController.swift */; };
-		A28124EC22FA90A80096CA56 /* YouBikeStationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124EB22FA90A80096CA56 /* YouBikeStationManager.swift */; };
+		A28124EC22FA90A80096CA56 /* YouBikeStationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28124EB22FA90A80096CA56 /* YouBikeStationsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +67,7 @@
 		A28124E422F46B050096CA56 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A28124E722F479E00096CA56 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		A28124E922F47A970096CA56 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		A28124EB22FA90A80096CA56 /* YouBikeStationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationManager.swift; sourceTree = "<group>"; };
+		A28124EB22FA90A80096CA56 /* YouBikeStationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationsManager.swift; sourceTree = "<group>"; };
 		B3A8FFA40F047E93963A82DC /* Pods_youbikeInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youbikeInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57EDAA559250FDF6042FC20 /* Pods-youbikeInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youbikeInfo.release.xcconfig"; path = "Target Support Files/Pods-youbikeInfo/Pods-youbikeInfo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				A28124BE22EAFC570096CA56 /* DataManager.swift */,
-				A28124EB22FA90A80096CA56 /* YouBikeStationManager.swift */,
+				A28124EB22FA90A80096CA56 /* YouBikeStationsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 			files = (
 				A28124DB22EEDDF30096CA56 /* YouBikeStationsMapViewModel.swift in Sources */,
 				A28124BB22EAC78C0096CA56 /* YouBikeStationsListCell.swift in Sources */,
-				A28124EC22FA90A80096CA56 /* YouBikeStationManager.swift in Sources */,
+				A28124EC22FA90A80096CA56 /* YouBikeStationsManager.swift in Sources */,
 				A28124BF22EAFC570096CA56 /* DataManager.swift in Sources */,
 				A28124E122F068860096CA56 /* StationInfoOnMapSubView.swift in Sources */,
 				A28124B022E89A450096CA56 /* apiModel.swift in Sources */,
